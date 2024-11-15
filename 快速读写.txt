@@ -1,0 +1,109 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+    public static PrintWriter out = new PrintWriter(new BufferedWriter(new OutputStreamWriter(System.out)));
+    public static Read in = new Read();
+    
+    public static void main(String[] args) throws IOException
+    {
+        // 写代码
+
+        out.close();
+    }
+}
+
+
+class Read // 自定义快速读入
+{
+    StringTokenizer st = new StringTokenizer("");
+    BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+    String next() throws IOException 
+    {
+        while(!st.hasMoreTokens())
+        {
+            st = new StringTokenizer(bf.readLine());
+        }
+        return st.nextToken();
+    }
+    
+    String nextLine() throws IOException 
+    {
+        return bf.readLine();
+    }
+    
+    int nextInt() throws IOException 
+    {
+        return Integer.parseInt(next());
+    }
+    
+    long nextLong() throws IOException 
+    {
+        return Long.parseLong(next());
+    }
+    
+    double nextDouble() throws IOException 
+    {
+        return Double.parseDouble(next());
+    }
+}
+
+
+//蓝桥云课解法
+
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.StringTokenizer;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int t=1;
+        for(int i=1;i<=t;i++){
+            solve();
+        }
+        out.flush();
+    }
+    static void solve(){
+       int n=in.nextInt();
+       for(int i=1;i<=n;i++){
+           out.print(in.nextLong()+" ");
+       }
+    }
+
+    static FastReader in = new FastReader();
+    static PrintWriter out=new PrintWriter(System.out);
+    static class FastReader{
+        static BufferedReader br;
+        static StringTokenizer st;
+        FastReader(){
+            br=new BufferedReader(new InputStreamReader(System.in));
+        }
+        String next(){
+            String str="";
+            while(st==null||!st.hasMoreElements()){
+                try {
+                    str=br.readLine();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                st=new StringTokenizer(str);
+            }
+            return st.nextToken();
+        }
+        int nextInt(){
+            return Integer.parseInt(next());
+        }
+        double nextDouble(){
+            return Double.parseDouble(next());
+        }
+        long nextLong(){
+            return Long.parseLong(next());
+        }
+    }
+
+}
